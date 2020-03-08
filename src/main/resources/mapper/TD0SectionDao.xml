@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.test.dao.TD0SectionDao">
+    <resultMap id="BaseResultMap" type="com.test.entity.TD0Section">
+        <id column="id" jdbcType="integer" property="id"/>
+        <result column="orgId" jdbcType="integer" property="orgid"/>
+        <result column="divCode" jdbcType="varchar" property="divCode"/>
+        <result column="divNameCode" jdbcType="varchar" property="divcode"/>
+        <result column="divName" jdbcType="varchar" property="divname"/>
+        <result column="ifSub" jdbcType="varchar" property="ifsub"/>
+        <result column="dutyTel" jdbcType="varchar" property="dutytel"/>
+        <result column="fax" jdbcType="varchar" property="fax"/>
+        <result column="divRoomNo" jdbcType="varchar" property="divroomno"/>
+    </resultMap>
+    <sql id="Base_column_List">
+        id,orgId,divCode,divNameCode,divName,ifSub,dutyTel,fax,divRoomNo
+    </sql>
+    <select id="selectAllSection" resultMap="BaseResultMap">
+        select
+        <include refid="Base_column_List"/>
+        from t_d0_section
+    </select>
+</mapper>
