@@ -23,9 +23,9 @@ public class SectionController {
      * @param model
      * @return
      */
-    @GetMapping(value = "/office")
+    @GetMapping(value = "/section")
     public String queryAllSection(Model model) {
         model.addAttribute("sectionlist", sectionService.selectAllSection());
-        return "office-list";
+        return "section";
     }
 }
