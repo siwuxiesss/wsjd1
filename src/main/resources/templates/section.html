@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8">
     <title>江苏省卫生监督业务系统</title>
+    <script src="jquery-3.2.1.js"></script>
     <!-- 新 Bootstrap4 核心 CSS 文件 -->
     <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
 
@@ -12,19 +13,64 @@
     <!-- bootstrap.bundle.min.js 用于弹窗、提示、下拉菜单，包含了 popper.min.js -->
     <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
 
-    <!-- 最新0的 Bootstrap4 核心 JavaScript 文件 -->
+    <!-- 最新的 Bootstrap4 核心 JavaScript 文件 -->
     <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
     <script>
         window.onload = function () {
             alert("页面加载完成");
+
+            //查询所有科室数据
+            function selectAllSection() {
+                $.ajax({
+                    url: "/sectionList",
+                    type: "get",
+                    success: function (sectionlist) {
+                        console.log(sectionlist);
+                        let str = "";
+                        $.each(sectionlist, function () {
+                            console.log(this);
+                            str += "<tr>";
+                            str += "<td>" + this.id + "</td>";
+                            str += "<td>" + this.orgid + "</td>";
+                            str += "<td>" + this.divcode + "</td>";
+                            str += "<td>" + this.divnamecode + "</td>";
+                            str += "<td>" + this.divname + "</td>";
+                            str += "<td>" + this.ifsub + "</td>";
+                            str += "<td>" + this.dutytel + "</td>";
+                            str += "<td>" + this.fax + "</td>";
+                            str += "<td>" + this.divroomno + "</td>";
+                            str += "</tr>";
+                        });
+                        $("#tab").html(str);
+                    },
+                    error: function () {
+                        alert("请求失败!");
+                    }
+                });
+            }
         }
     </script>
 </head>
 <body>
-<div>
-
-</div>
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>id</th>
+        <th>机构id</th>
+        <th>科室编码</th>
+        <th>科室名称编码</th>
+        <th>科室名称代码</th>
+        <th>是否为分所0=否 1=是</th>
+        <th>电话号码</th>
+        <th>传真号码</th>
+        <th>门号</th>
+        <th colspan="2">操作</th>
+    </tr>
+    </thead>
+    <tbody id="tab">
+    </tbody>
+</table>
 
 
 <form action="" method="post" id="delSection">
