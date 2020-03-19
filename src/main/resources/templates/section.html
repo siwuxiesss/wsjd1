@@ -18,37 +18,38 @@
 
     <script>
         window.onload = function () {
-            alert("页面加载完成");
+            //alert("页面加载完成");
+            selectAllSection();
+        }
 
-            //查询所有科室数据
-            function selectAllSection() {
-                $.ajax({
-                    url: "/sectionList",
-                    type: "get",
-                    success: function (sectionlist) {
-                        console.log(sectionlist);
-                        let str = "";
-                        $.each(sectionlist, function () {
-                            console.log(this);
-                            str += "<tr>";
-                            str += "<td>" + this.id + "</td>";
-                            str += "<td>" + this.orgid + "</td>";
-                            str += "<td>" + this.divcode + "</td>";
-                            str += "<td>" + this.divnamecode + "</td>";
-                            str += "<td>" + this.divname + "</td>";
-                            str += "<td>" + this.ifsub + "</td>";
-                            str += "<td>" + this.dutytel + "</td>";
-                            str += "<td>" + this.fax + "</td>";
-                            str += "<td>" + this.divroomno + "</td>";
-                            str += "</tr>";
-                        });
-                        $("#tab").html(str);
-                    },
-                    error: function () {
-                        alert("请求失败!");
-                    }
-                });
-            }
+        //查询所有科室数据
+        function selectAllSection() {
+            $.ajax({
+                url: "/sectionList",
+                type: "get",
+                success: function (sectionlist) {
+                    console.log(sectionlist);
+                    let str = "";
+                    $.each(sectionlist, function () {
+                        console.log(this);
+                        str += "<tr>";
+                        str += "<td>" + this.id + "</td>";
+                        str += "<td>" + this.orgId + "</td>";
+                        str += "<td>" + this.divCode + "</td>";
+                        str += "<td>" + this.divNameCode + "</td>";
+                        str += "<td>" + this.divName + "</td>";
+                        str += "<td>" + this.ifSub + "</td>";
+                        str += "<td>" + this.dutyTel + "</td>";
+                        str += "<td>" + this.fax + "</td>";
+                        str += "<td>" + this.divRoomNo + "</td>";
+                        str += "</tr>";
+                    });
+                    $("#tab").html(str);
+                },
+                error: function () {
+                    alert("请求失败!");
+                }
+            });
         }
     </script>
 </head>
