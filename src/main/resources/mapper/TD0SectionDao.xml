@@ -5,14 +5,14 @@
 <mapper namespace="com.test.dao.TD0SectionDao">
     <resultMap id="BaseResultMap" type="com.test.entity.TD0Section">
         <id column="id" jdbcType="INTEGER" property="id"/>
-        <result column="orgId" jdbcType="INTEGER" property="orgid"/>
+        <result column="orgId" jdbcType="INTEGER" property="orgId"/>
         <result column="divCode" jdbcType="VARCHAR" property="divCode"/>
-        <result column="divNameCode" jdbcType="VARCHAR" property="divcode"/>
-        <result column="divName" jdbcType="VARCHAR" property="divname"/>
-        <result column="ifSub" jdbcType="VARCHAR" property="ifsub"/>
-        <result column="dutyTel" jdbcType="VARCHAR" property="dutytel"/>
+        <result column="divNameCode" jdbcType="VARCHAR" property="divNameCode"/>
+        <result column="divName" jdbcType="VARCHAR" property="divName"/>
+        <result column="ifSub" jdbcType="VARCHAR" property="ifSub"/>
+        <result column="dutyTel" jdbcType="VARCHAR" property="dutyTel"/>
         <result column="fax" jdbcType="VARCHAR" property="fax"/>
-        <result column="divRoomNo" jdbcType="VARCHAR" property="divroomno"/>
+        <result column="divRoomNo" jdbcType="VARCHAR" property="divRoomNo"/>
     </resultMap>
     <sql id="Base_column_List">
         id,orgId,divCode,divNameCode,divName,ifSub,dutyTel,fax,divRoomNo

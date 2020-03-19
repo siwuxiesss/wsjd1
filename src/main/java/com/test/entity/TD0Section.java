@@ -23,32 +23,32 @@ public class TD0Section implements Serializable {
     /**
      * 机构id
      */
-    private Integer orgid;
+    private Integer orgId;
 
     /**
      * 科室编码
      */
-    private String divcode;
+    private String divCode;
 
     /**
      * 科室名称编码
      */
-    private String divnamecode;
+    private String divNameCode;
 
     /**
      * CVP01004科室名称代码
      */
-    private String divname;
+    private String divName;
 
     /**
      * 是否为分所0=否 1=是
      */
-    private String ifsub;
+    private String ifSub;
 
     /**
      * 电话号码
      */
-    private String dutytel;
+    private String dutyTel;
 
     /**
      * 传真号码
@@ -58,7 +58,7 @@ public class TD0Section implements Serializable {
     /**
      * 门号
      */
-    private String divroomno;
+    private String divRoomNo;
 
     private static final long serialVersionUID = 1L;
 }
