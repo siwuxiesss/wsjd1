@@ -22,4 +22,34 @@
         <include refid="Base_column_List"/>
         from t_d0_section
     </select>
+    <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        select
+        <include refid="Base_column_List"/>
+        from t_d0_section
+        where id = #{id,jdbcType=INTEGER}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+        delete
+        from t_d0_section
+        where id = #{id,jdbcType=INTEGER}
+    </delete>
+    <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.test.entity.TD0Section"
+            useGeneratedKeys="true">
+        insert into t_d0_section (id, orgId, divCode, divNameCode, divName, ifSub, dutyTel, fax, divRoomNo)
+        values (#{orgid,jdbcType=INTEGER}, #{divcode,jdbcType=VARCHAR}, #{divnamecode,jdbcType=VARCHAR},
+                #{divname,jdbcType=VARCHAR}, #{ifsub,jdbcType=VARCHAR}, #{dutytel,jdbcType=VARCHAR},
+                #{fax,jdbcType=VARCHAR}, #{divroomno,jdbcType=VARCHAR});
+    </insert>
+    <update id="updateByPrimaryKey" parameterType="com.test.entity.TD0Section">
+        update t_d0_section
+        set orgId       = #{orgid,jdbcType=INTEGER},
+            divCode     = #{divcode,jdbcType=VARCHAR},
+            divNameCode = #{divnamecode,jdbcType=VARCHAR},
+            divName     = #{divname,jdbcType=VARCHAR},
+            ifSub       = #{ifsub,jdbcType=VARCHAR},
+            dutyTel     = #{dutytel,jdbcType=VARCHAR},
+            fax         = #{fax,jdbcType=VARCHAR},
+            divRoomNo   = #{divroomno,jdbcType=VARCHAR}
+        where id = #{id,jdbcType=INTEGER}
+    </update>
 </mapper>
