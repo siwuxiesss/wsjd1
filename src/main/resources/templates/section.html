@@ -20,7 +20,7 @@
         window.onload = function () {
             //alert("页面加载完成");
             selectAllSection();
-        }
+        };
 
         //查询所有科室数据
         function selectAllSection() {
@@ -31,14 +31,19 @@
                     console.log(sectionlist);
                     let str = "";
                     $.each(sectionlist, function () {
-                        console.log(this);
+                        //console.log(this);
                         str += "<tr>";
                         str += "<td>" + this.id + "</td>";
                         str += "<td>" + this.orgId + "</td>";
                         str += "<td>" + this.divCode + "</td>";
                         str += "<td>" + this.divNameCode + "</td>";
                         str += "<td>" + this.divName + "</td>";
-                        str += "<td>" + this.ifSub + "</td>";
+                        //str += "<td>" + this.ifSub + "</td>";
+                        if (this.ifSub == 0) {
+                            str += "<td>否</td>";
+                        } else {
+                            str += "<td>是</td>";
+                        }
                         str += "<td>" + this.dutyTel + "</td>";
                         str += "<td>" + this.fax + "</td>";
                         str += "<td>" + this.divRoomNo + "</td>";
@@ -62,7 +67,7 @@
         <th>科室编码</th>
         <th>科室名称编码</th>
         <th>科室名称代码</th>
-        <th>是否为分所0=否 1=是</th>
+        <th>是否为分所</th>
         <th>电话号码</th>
         <th>传真号码</th>
         <th>门号</th>
